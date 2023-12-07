@@ -1,0 +1,7 @@
+
+G	php:S2003"&Replace "include" with "include_once".(Šãæúÿÿÿÿ8²ñÈ€Â1
+B	php:S2003$"&Replace "include" with "include_once".(šá·˜8è‘ü€Â1
+?php:S125"Remove this commented out code.(òñÊ»ùÿÿÿÿ8Ÿ¹¼€Â1
+?php:S125"Remove this commented out code.(ïåºúÿÿÿÿ8Ÿ»É€Â1
+m	php:S4833"LReplace "include" with namespace import mechanism through the "use" keyword.(Šãæúÿÿÿÿ8²ñÈ€Â1
+h	php:S4833$"LReplace "include" with namespace import mechanism through the "use" keyword.(šá·˜8è‘ü€Â1
