@@ -1,8 +1,10 @@
 <?php
+include "helper.php";
 session_start();
 
 
 function registerUser($username,$email,$password,$c_password){
+
 
     if ($password != $c_password){
         echo "رمز عبور خالی است یا مطابقت ندارد!";
@@ -11,11 +13,7 @@ function registerUser($username,$email,$password,$c_password){
         fwrite($file,"username:$username:email:$email:password:$password\n");
         fclose($file);
 
-        $_SESSION["username"] = $username;
-
-        $expire = time() + (30 * 24 * 60 * 60 );
-
-        setcookie("session_id" , session_id() , $expire , "/");
+        setUserSession($username);
 
        return true;
     }
@@ -34,10 +32,7 @@ function loginUser($email , $password )
 
         if ($storedEmail == $email && $storedPassword == $password){
             $username = $fileds[1];
-            $_SESSION["username"] = $username;
-            $expire = time() + (30 * 24 * 60 * 60 );
-
-            setcookie("session_id" , session_id() , $expire , "/");
+            setUserSession($username);
             return true;
         }
 

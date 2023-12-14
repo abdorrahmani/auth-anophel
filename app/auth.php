@@ -1,7 +1,6 @@
 <?php
 require_once "../functions/functions.php";
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if (isset($_POST["register"])){
@@ -11,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         $c_password = $_POST["c_password"];
 
         if (registerUser($username, $email, $password, $c_password)){
-            header("Location: ../views/userPanel/dashboard.php");
+            redirect("../views/userPanel/dashboard.php");
         }
 
     }elseif (isset($_POST["login"])){
@@ -20,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
         if( loginUser($email, $password) ){
-            header("Location: ../views/userPanel/dashboard.php");
+            redirect("../views/userPanel/dashboard.php");
         }else{
             echo "<p>user not login</p>";
         }
